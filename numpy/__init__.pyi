@@ -16,6 +16,7 @@ from uuid import UUID
 import numpy as np
 from numpy._pytesttester import PytestTester
 from numpy._core._internal import _ctypes
+from numpy._utils._config_helpers import ConfigDisplayModes
 
 from numpy._typing import (
     # Arrays
@@ -779,7 +780,7 @@ test: PytestTester
 #
 # Placeholders for classes
 
-def show_config() -> None: ...
+def show_config(mode: ConfigDisplayModes) -> None | dict: ...
 
 _NdArraySubClass = TypeVar("_NdArraySubClass", bound=NDArray[Any])
 _NdArraySubClass_co = TypeVar("_NdArraySubClass_co", bound=NDArray[Any], covariant=True)
